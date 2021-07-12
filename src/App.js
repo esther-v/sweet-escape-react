@@ -1,15 +1,17 @@
 import React from 'react';
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 import Accueil from './pages/Accueil';
 import BonsPlans from './pages/BonsPlans';
 import CoVoyageurs from './pages/CoVoyageurs';
+import Profil from './pages/Profil';
 import GlobalStyle from './components/GlobalStyle';
 //Router
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
+    <BrowserRouter>
       <GlobalStyle/>
       <Nav/>
       <Switch>
@@ -22,8 +24,12 @@ function App() {
         <Route path="/covoyageurs">
           <CoVoyageurs/>
         </Route>
-      </Switch>   
-    </div>
+        <Route path="/profil">
+          <Profil/>
+        </Route>
+      </Switch>
+      <Footer/>   
+    </BrowserRouter>
   );
 }
 
