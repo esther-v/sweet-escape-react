@@ -1,4 +1,5 @@
 import React, {useState, useContext} from 'react';
+import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import authContext from '../store';
 import userService from '../services/user';
@@ -24,7 +25,7 @@ const FormLogin = (props) => {
                 localStorage.setItem('token', response.data.token);
                 authStore.setToken(response.token);
                 authStore.setIsAuth(true);
-                props.history.push('/bonsplans');
+                props.history.push('/profil')
                 
             } 
             
@@ -66,4 +67,4 @@ const StyledForm = styled.form`
     }
 `
 
-export default FormLogin;
+export default withRouter(FormLogin);

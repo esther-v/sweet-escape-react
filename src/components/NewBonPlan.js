@@ -4,7 +4,7 @@ import LogiqueModaleInscription from './LogiqueModaleInscription';
 import LogiqueModaleConnexion from './LogiqueModaleConnexion';
 import ModaleInscription from './ModaleInscription';
 import ModaleConnexion from './ModaleConnexion';
-import FormNewTip from './FormNewTip';
+
 
 
 const NewBonPlan = () => {
@@ -27,8 +27,6 @@ const NewBonPlan = () => {
                 revele={montre}
                 cache={bascule}
             />
-
-            <FormNewTip/>
 
         </StyledBoxNewTip>
     )

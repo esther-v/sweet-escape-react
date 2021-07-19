@@ -8,6 +8,9 @@ const userService = {
     login: async (email, password) => {
         const user = {email, password}
         return await api.post('/login', user)
+    },
+    mytips: async (tipinfos) => {
+        return await api.get('/mytips', tipinfos)
     }
 }
 

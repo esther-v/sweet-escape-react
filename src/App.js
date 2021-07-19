@@ -1,4 +1,5 @@
 import React from 'react';
+import authContext from './store';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Accueil from './pages/Accueil';
@@ -7,7 +8,19 @@ import CoVoyageurs from './pages/CoVoyageurs';
 import Profil from './pages/Profil';
 import GlobalStyle from './components/GlobalStyle';
 //Router
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import FormNewTip from './components/FormNewTip';
+
+const PrivateRoute =({component: Component, ...rest}) => {
+  const store = React.useContext(authContext);
+  return (
+    <Route {...rest} render={(props) => (
+      store.isAuth
+      ? <Component {...props} />
+      : <Redirect to='/' />
+    )} />
+  );
+}
 
 const App = () => {
   return (
@@ -24,9 +37,9 @@ const App = () => {
         <Route path="/covoyageurs">
           <CoVoyageurs/>
         </Route>
-        <Route path="/profil">
+        <PrivateRoute path="/profil" render={(props) => <FormNewTip{...props}/>}>
           <Profil/>
-        </Route>
+        </PrivateRoute>
       </Switch>
       <Footer/>   
     </BrowserRouter>

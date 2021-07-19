@@ -43,7 +43,7 @@ const StyledNav = styled.nav`
     }
     #logo{
         font-size: 1.3rem;
-        font-family: "Lobster", cursive;
+        font-family: 'Parisienne', cursive;
         font-weight: lighter;
         
     }  

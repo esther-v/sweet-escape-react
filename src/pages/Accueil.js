@@ -1,6 +1,7 @@
 import React from 'react';
 import LandingAccueil from '../components/LandingAccueil';
 import APropos from '../components/APropos';
+import SectionBonsPlans from '../components/SectionBonsPlans';
 
 
 const Accueil = () => {
@@ -8,6 +9,7 @@ const Accueil = () => {
         <div>
             <LandingAccueil/>
             <APropos/>
+            <SectionBonsPlans/>
        
         </div>
     )

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
+
 const GlobalStyle = createGlobalStyle`
 
 *{
@@ -14,6 +15,7 @@ html {
 
 body{
     background: white;
+    font-family: 'Lato', sans-serif;
 }
 
 h2{
@@ -29,10 +31,7 @@ h4{
 a{
     font-size: 1.1rem;
 }
-span{
-    font-weight: bold;
-    color: #23d997;
-}
+
 
 
 `

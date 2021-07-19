@@ -8,7 +8,18 @@ const FormNewTip = () => {
     const [description, setDescription] = useState("");
     const [city, setCity] = useState("");
     const [country, setCountry] = useState("");
+    const [type, setType] = useState("");
     const [error, setError] = useState("");
+
+    const RadioInput = ({label, value, checked, setter}) => {
+        return (
+          <StyledRadio>
+            <input type="radio" checked={checked === value}
+                   onChange={() => setter(value)} />
+            <span>{label}</span>
+          </StyledRadio>
+        );
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -17,7 +28,8 @@ const FormNewTip = () => {
             place_name: place_name,
             description: description,
             city: city,
-            country: country
+            country: country,
+            type: type
         };
         try {
             const response = await tipService.newTip(tip_infos);
@@ -25,8 +37,8 @@ const FormNewTip = () => {
                 console.log(response);
             }
         } catch(error) {
-            console.log(error.response.data.message);
-            setError(error.response.data.message);
+            console.log(error);
+            setError(error);
         }
     }
 
@@ -37,7 +49,7 @@ const FormNewTip = () => {
                     
             { error === ""
                 ? null
-                : <h5> {error} <button onClick={()=> setError("")}> X </button> </h5>} 
+                : <h5> <button onClick={()=> setError("")}> X </button> </h5>} 
 
                 <input 
                     value={place_name} 
@@ -59,6 +71,14 @@ const FormNewTip = () => {
                     type="text" 
                     placeholder="Pays"
                     onChange={e => setCountry(e.target.value)}/>   
+                
+                <div className="radiobuttons">
+                    <label className="labelradio">Type de bon plan :</label>
+                    <RadioInput label="Activités culturelles" value="culture" checked={type} setter={setType}  />
+                    <RadioInput label="Activités extérieures" value="exterieur" checked={type} setter={setType} />
+                    <RadioInput label="Restaurants/bars/cafés" value="restaurant" checked={type} setter={setType} />
+                    <RadioInput label="Hébergements" value="hebergement" checked={type} setter={setType} />
+                </div>
 
                 <button type="submit">Envoyer</button>
             </form>
@@ -76,6 +96,20 @@ const StyledFormTip = styled.div`
         input, textarea {
             margin-bottom: 20px;
         }
+        .radiobuttons {
+            display: flex;
+            flex-direction:column;
+            .labelradio {
+                margin-bottom: 10px;
+            }
+        }
+    }
+`
+
+const StyledRadio = styled.label`
+    span{
+        color: black;
+        margin-left: 5px;
     }
 `
 

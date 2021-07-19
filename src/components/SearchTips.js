@@ -9,7 +9,7 @@ const SearchTips = () => {
     const getTips = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:8080/api/search?city=${search}`);
+            const response = await fetch(`http://localhost:8181/api/search?city=${search}`);
             console.log(response);
             const data = await response.json();
             setTips(data.result);
@@ -28,8 +28,8 @@ const SearchTips = () => {
        <StyledSearchBox>
             <h1>Recherche par ville</h1>
             <form onSubmit={getTips} className="search-form">
-            <input className="search-bar" type="text" value={search} onChange={updateSearch}/>
-            <button className="search-button" type="submit">Search</button>
+            <input className="search-bar" type="text" value={search} onChange={updateSearch} />
+            <button className="search-button" type="submit">Chercher</button>
             </form> 
             <div className="tips-results">
             {tips.map(tip =>(

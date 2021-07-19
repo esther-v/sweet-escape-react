@@ -2,15 +2,28 @@ import React from 'react';
 import styled from 'styled-components';
 import cloud1 from '../img/cloud1.png';
 import cloud2 from '../img/cloud2.png';
-import Wave from './Wave';
+import {motion} from 'framer-motion';
+// import Wave from './Wave';
 
 const LandingAccueil = () => {
     return(
         <StyledLandAccueil>
-            <img className="cloud" src={cloud1} alt="nuage" />
-            <h1>Sweet Escape.</h1>
-            <img className="cloud" src={cloud2} alt="nuage" />
-            <Wave/>
+            <motion.img 
+                initial={{ opacity: 0}}
+                animate={{ opacity: 1}}
+                transition={{ duration: 1.2}}
+            className="cloud" src={cloud1} alt="nuage" />
+            <motion.h1
+                initial={{y: -100}}
+                animate={{y: 0}}
+                transition={{ duration: 1}}
+            >Sweet Escape.</motion.h1>
+            <motion.img 
+                initial={{ opacity: 0}}
+                animate={{ opacity: 1}}
+                transition={{ duration: 1.2}}
+            className="cloud" src={cloud2} alt="nuage" />
+            {/* <Wave/> */}
         </StyledLandAccueil>
     )
 }
@@ -27,6 +40,7 @@ const StyledLandAccueil = styled.div`
         color: white;
         font-size: 5vw;
         text-shadow: 3px 4px 0 rgba(0,0,0,0.4);
+        font-family: 'Parisienne', cursive;
     }
     .cloud {
         width: 30%;
