@@ -43,6 +43,7 @@ const Profil = () => {
                     {myTips.map(myTip => (
                         <MyTip 
                         key={myTip.id_tip} 
+                        id_tip={myTip.id_tip} 
                         place_name={myTip.place_name} 
                         description={myTip.description} 
                         publish={myTip.publish}

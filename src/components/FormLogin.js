@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import authContext from '../store';
 import userService from '../services/user';
 
-
 const FormLogin = (props) => {
 
     const [email, setEmail] = useState("");
@@ -12,11 +11,9 @@ const FormLogin = (props) => {
     const [error, setError] = useState("");
     const authStore = useContext(authContext);
 
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // console.log(e);
-        // console.log(email, password);
+        
         
         try {
             const response = await userService.login(email, password);

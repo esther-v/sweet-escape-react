@@ -1,8 +1,26 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
+import tipService from '../services/tip_service';
 
-const MyTip = ({place_name, description, publish, type}) => {
-    
+const MyTip = ({id_tip, place_name, description, publish, type}, props) => {
+
+    const handleSubmit = async (e) => {
+        console.log(id_tip);
+        console.log(e);
+        try {
+            const response = await tipService.deleteTip(id_tip);
+            if(response.status === 200) {
+                console.log(id_tip)
+                console.log(response);  
+                props.history.push('/profil')
+            } 
+            
+        } catch(error) {
+            console.log(error);
+        }
+    }
+
     return(
         <StyledBoxTip>
             <h4>{place_name}</h4>
@@ -11,7 +29,7 @@ const MyTip = ({place_name, description, publish, type}) => {
             <p>Type : {type}</p>
             <div className="box-boutons">
                 <button>Modifier</button>
-                <button>Supprimer</button>
+                <button type="submit" onClick={handleSubmit}>Supprimer</button>
             </div>
         </StyledBoxTip>
     )
@@ -31,4 +49,4 @@ const StyledBoxTip = styled.div`
     }
 `
 
-export default MyTip;
+export default withRouter(MyTip);
