@@ -22,7 +22,15 @@ const RecentTips =  () => {
             <h2>Derniers bons plans partagés</h2>
             <div className="box-tips" >
                 {tips.map(tip =>(
-                    <Tip key={tip.id_tip} place_name={tip.place_name}/>
+                    <Tip 
+                    key={tip.id_tip} 
+                    place_name={tip.place_name}
+                    description={tip.description}
+                    country={tip.country}
+                    city={tip.city}
+                    publish={tip.publish}
+                    type={tip.type}
+                    />
                 ))}
             </div>
         </StyledMostRecent>
@@ -32,6 +40,9 @@ const RecentTips =  () => {
 const StyledMostRecent = styled.div`
     background: lightblue;
     padding: 40px 60px;
+    .box-tips{
+        display: flex;
+    }
 `
 
 export default RecentTips;

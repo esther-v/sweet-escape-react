@@ -76,7 +76,7 @@ const StyledSectionTips = styled.div`
     button {
         display: block;
         margin: 20px auto 0;
-        padding: 15px 20px;
+        padding: 10px 20px;
         background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
         color: white;
         font-weight: bold;

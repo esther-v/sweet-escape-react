@@ -22,9 +22,7 @@ h2{
     font-weight: lighter;
     font-size: 2rem;  
 }
-h3{
-    color: white;
-}
+
 h4{
     font-weight: bold;
 }

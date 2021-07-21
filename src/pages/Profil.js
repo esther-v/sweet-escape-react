@@ -50,8 +50,7 @@ const Profil = () => {
                         type={myTip.type}/>
                         
                     ))}
-                    <MyTip/>
-                    <MyTip/>
+                   
                 </div>
                 <FormNewTip/>
             </div>

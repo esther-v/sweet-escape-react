@@ -28,7 +28,7 @@ const SearchTips = () => {
        <StyledSearchBox>
             <h1>Recherche par ville</h1>
             <form onSubmit={getTips} className="search-form">
-            <input className="search-bar" type="text" value={search} onChange={updateSearch} />
+            <input className="search-bar" type="search" value={search} onChange={updateSearch} />
             <button className="search-button" type="submit">Chercher</button>
             </form> 
             <div className="tips-results">
@@ -43,6 +43,29 @@ const SearchTips = () => {
 
 const StyledSearchBox = styled.div`
     padding : 40px 60px;
+    .search-bar{
+        width: 50%;
+        margin-right: 5px;
+        border : 1px dashed #00909E;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    .search-button {
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+        color: white;
+        cursor: pointer;
+        &:hover{
+            border: 1px solid #00909E;
+            background: white;
+            color: #00909E;
+
+        }
+  
+}
 `
 
 export default SearchTips;
