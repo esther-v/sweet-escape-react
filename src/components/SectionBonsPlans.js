@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import sea from '../img/sea.png';
 import mountainlake from '../img/mountain-lake.png';
@@ -21,11 +22,12 @@ const SectionBonsPlans = () => {
                     <p>Retrouvez toutes les expériences postées par les voyageurs.</p>
                 </div>
             </div>
-            <motion.button
+            <motion.button 
                 variants={buttonVariants}
                 whileHover="hover" 
-            >En savoir plus
+            ><Link to="/bonsplans" className="link">En savoir plus</Link>
             </motion.button>
+            
         </StyledSectionTips>
     )
 }
@@ -73,15 +75,19 @@ const StyledSectionTips = styled.div`
             text-align: center;
         }
     }
-    button {
+    button{
         display: block;
         margin: 20px auto 0;
         padding: 10px 20px;
         background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-        color: white;
-        font-weight: bold;
         border-radius: 8px;
-        border:none;
+        border:none; 
+    }
+    .link{
+        text-decoration: none;
+        color:white;
+        font-weight: bold;
+        font-size: 14px;
     }
     
 `

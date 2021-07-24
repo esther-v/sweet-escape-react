@@ -28,8 +28,9 @@ const RecentTips =  () => {
                     description={tip.description}
                     country={tip.country}
                     city={tip.city}
-                    publish={tip.publish}
+                    date={tip.date}
                     type={tip.type}
+                    firstname={tip.firstname}
                     />
                 ))}
             </div>

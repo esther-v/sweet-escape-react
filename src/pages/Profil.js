@@ -10,34 +10,48 @@ import userService from '../services/user';
 const Profil = () => {
     
     const [myTips, setMyTips] = useState([]);
+    const [profile, setProfile] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
-            // const tipinfos = myTips;
         try {
             const response = await userService.mytips();
             if(response.status === 200) {
                 console.log(response);
                 setMyTips(response.data.result);
-            }
-        
-            
+            }   
         } catch (error) {
             console.log(error);
         }
      }
-     fetchData();
-   }, [])
+    fetchData();
+    }, [])
+
+    useEffect(() => {
+        async function fetchData() {
+        try {
+            const response = await userService.profile();
+            if(response.status === 200) {
+                console.log(response);
+                setProfile(response.data.result[0]);
+            }   
+        } catch (error) {
+            console.log(error);
+        }
+     }
+    fetchData();
+    }, [])
 
     return(
         <StyledProfil>
             <LandingProfil/>
             <div className="box-profil">
+
                 <h4>Informations profil</h4>
-                <p>Prénom</p>
-                <p>Ville</p>
-                <p>Pays</p>
-                <p>Description</p>
+                <p>Prénom: {profile.firstname}</p>
+                <p>Pays: {profile.country}</p>
+                <p>Description: {profile.description}</p>
+                <p>Email: {profile.email}</p>
                 <div className="my-tips">
                     <h4>Les expériences que j'ai postées : </h4>
                     {myTips.map(myTip => (

@@ -37,10 +37,10 @@ const NewBonPlan = () => {
 }
 
 const StyledBoxNewTip = styled.div`
-    border: 1px solid red;
+    /* border: 1px solid red; */
     padding : 50px 0;
     .container {
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
         width: 100%;
         background: url(${mountainsunset}),  no-repeat;
         background-size: cover;
@@ -49,7 +49,7 @@ const StyledBoxNewTip = styled.div`
     .box {
         width: 60%;
         margin: 0 auto;
-        border: 1px solid green;
+        /* border: 1px solid green; */
         text-align: center;
         background: #EEEEEE;
         box-shadow: 0px 0px 50px 10px #fff;

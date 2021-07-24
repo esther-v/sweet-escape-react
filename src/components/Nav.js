@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import logoBlanc from '../img/logo-blanc.png';
+// import userIcon from '../img/user1.svg';
+// <img src={userIcon} alt="" className="icon"/>
 
 const Nav = () => {
     return(
@@ -11,6 +13,7 @@ const Nav = () => {
                 <li><Link to="/">Accueil</Link></li>
                 <li><Link to="/bonsplans">Bons plans</Link></li>
                 <li><Link to="/covoyageurs">Co-voyageurs</Link></li>
+                <li><Link to="/profil">Profil</Link></li>
             </ul>
         </StyledNav>
     )
@@ -36,6 +39,7 @@ const StyledNav = styled.nav`
     } 
     ul{
         display: flex;
+   
         list-style: none;
         li{
             padding-left: 30px;  
@@ -47,6 +51,11 @@ const StyledNav = styled.nav`
         font-weight: lighter;
         
     }  
+    .icon{
+        filter: invert(100%) sepia(3%) saturate(731%) hue-rotate(161deg) brightness(115%) contrast(100%);        
+        height: 20px;
+        border-radius: 50%;
+    }
 
 `
 

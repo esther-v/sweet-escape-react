@@ -11,7 +11,10 @@ const userService = {
     },
     mytips: async (tipinfos) => {
         return await api.get('/mytips', tipinfos)
-    }
+    },
+    profile: async(infosprofil) => {
+        return await api.get('/profile', infosprofil)
+    } 
 }
 
 export default userService;

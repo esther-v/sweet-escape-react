@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Tip = ({place_name, description, city, country, publish, type}) => {
+const Tip = ({place_name, description, city, country, date, type, firstname}) => {
     return(
         <StyledBox>
             <h3>{place_name}</h3>
             <p className="description">{description}</p>
             <p className="location">{city}, {country}</p>
-            <p>Posté le : {publish}</p>
+            <p>Posté le : {date} par {firstname}</p>
             <p>Type d'expérience : {type}</p>
         </StyledBox>
     );

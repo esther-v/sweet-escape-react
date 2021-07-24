@@ -14,7 +14,6 @@ const FormLogin = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        
         try {
             const response = await userService.login(email, password);
             if(response.status === 200) {
@@ -22,8 +21,7 @@ const FormLogin = (props) => {
                 localStorage.setItem('token', response.data.token);
                 authStore.setToken(response.token);
                 authStore.setIsAuth(true);
-                props.history.push('/profil')
-                
+                props.history.push('/profil');      
             } 
             
         } catch(error) {

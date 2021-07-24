@@ -10,10 +10,7 @@ const FormSignUp = (props) => {
     const [firstname, setFirstName] = useState("");
     const [email, setEmail] = useState("");
     const [emailError, setEmailError] = useState("");
-    const [password, setPassword, passwordError] = usePasswordValidator({
-        min: 8,
-        max: 15
-    });
+    const [password, setPassword, passwordError] = usePasswordValidator({min: 8, max: 15});
     const [birthday, setBirthday] = useState("");
     const [country, setCountry] = useState("");
     const [description, setDescription] = useState("");
