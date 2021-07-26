@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import LandingProfil from '../components/LandingProfil';
 import FormNewTip from '../components/FormNewTip';
 import MyTip from '../components/MyTip';
+import BtnDeconnect from '../components/BtnDeconnect';
 import styled from 'styled-components';
 import userService from '../services/user';
 
@@ -52,6 +53,7 @@ const Profil = () => {
                 <p>Pays: {profile.country}</p>
                 <p>Description: {profile.description}</p>
                 <p>Email: {profile.email}</p>
+                <BtnDeconnect/>
                 <div className="my-tips">
                     <h4>Les expériences que j'ai postées : </h4>
                     {myTips.map(myTip => (

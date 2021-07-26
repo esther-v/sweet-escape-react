@@ -57,6 +57,9 @@ const StyledForm = styled.form`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background: #f1f1f1;
+    color: black;
+    padding: 20px;
     input{
         margin-bottom: 20px;
     }

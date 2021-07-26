@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import logoBlanc from '../img/logo-blanc.png';
-// import userIcon from '../img/user1.svg';
-// <img src={userIcon} alt="" className="icon"/>
+import userIcon from '../img/user1.svg';
+
 
 const Nav = () => {
     return(
@@ -13,7 +13,14 @@ const Nav = () => {
                 <li><Link to="/">Accueil</Link></li>
                 <li><Link to="/bonsplans">Bons plans</Link></li>
                 <li><Link to="/covoyageurs">Co-voyageurs</Link></li>
-                <li><Link to="/profil">Profil</Link></li>
+                <li><Link to="/login">Compte</Link></li>
+                {localStorage.token?
+                <>
+                <li><Link to="/profil"><img src={userIcon} alt="icone utilisateur" className="icon"/></Link></li>
+                </>
+                : null
+                }
+
             </ul>
         </StyledNav>
     )

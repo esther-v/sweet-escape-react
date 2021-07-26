@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import accueil from '../img/accueil.png';
 import cloud1 from '../img/cloud1.png';
 import cloud2 from '../img/cloud2.png';
 import {motion} from 'framer-motion';
@@ -33,7 +34,7 @@ const StyledLandAccueil = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background:  linear-gradient(180deg, rgba(4,44,75,1) 0%, rgba(56,71,110,0) 80%), url('https://images.unsplash.com/photo-1546948630-1149ea60dc86?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80') top center no-repeat;
+    background:  linear-gradient(180deg, rgba(4,44,75,1) 0%, rgba(56,71,110,0) 80%), url(${accueil}) top center no-repeat;
     background-position: center;
     background-size: cover;
     h1{

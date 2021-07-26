@@ -6,10 +6,12 @@ import Accueil from './pages/Accueil';
 import BonsPlans from './pages/BonsPlans';
 import CoVoyageurs from './pages/CoVoyageurs';
 import Profil from './pages/Profil';
+import Login from './pages/Login';
+import FormNewTip from './components/FormNewTip';
 import GlobalStyle from './components/GlobalStyle';
 //Router
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import FormNewTip from './components/FormNewTip';
+
 
 const PrivateRoute =({component: Component, ...rest}) => {
   const store = React.useContext(authContext);
@@ -36,6 +38,9 @@ const App = () => {
         </Route>
         <Route path="/covoyageurs">
           <CoVoyageurs/>
+        </Route>
+        <Route path="/login">
+          <Login/>
         </Route>
         <PrivateRoute path="/profil" render={(props) => <FormNewTip{...props}/>}>
           <Profil/>
