@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import login_bg from '../img/login.jpg';
 import FormLogin from '../components/FormLogin';
+import {Link} from 'react-router-dom';
 
 const Login = () => {
     return(
@@ -9,7 +10,8 @@ const Login = () => {
             <div className="box">
                 <h2>Se connecter</h2>
                 <FormLogin/>
-                <p>Pas encore de compte ? <span>S'inscrire</span></p>
+                <p>Pas encore de compte ? </p>
+                <Link to="/signup"><p className="connect">S'inscrire</p></Link>
             </div>
         </StyledLogin>
     )
@@ -31,9 +33,10 @@ const StyledLogin = styled.div`
         padding: 20px 25px;
         h2, p {
             color: #f1f1f1;
-            span{
-                font-weight: bold;
-            }
+    
+        }
+        .connect{
+            text-decoration: underline;
         }
     }
 `

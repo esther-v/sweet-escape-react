@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Footer = () => {
     return(
         <StyledFooter>
-            <p>© 2021 Sweet Escape, made with 💚 by esther</p>
+            <p>© 2021 Sweet Escape</p>
         </StyledFooter>
     )
 }

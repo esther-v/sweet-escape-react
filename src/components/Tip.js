@@ -16,11 +16,14 @@ const Tip = ({id_tip, place_name, description, city, country, date, type, firstn
 const StyledBox = styled.div`
     border-radius: 10px;
     box-shadow: 0px 5px 20px rgb(71, 71, 71);
-    margin: 20px;
     background: white;
     align-items: center;
     width: 280px;
     padding: 10px;
+    margin: 20px;
+    @media (max-width: 440px) {
+    margin: 20px 0;
+    }
     .description{
         font-style: italic;
     }

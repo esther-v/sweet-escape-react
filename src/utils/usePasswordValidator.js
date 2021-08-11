@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 
-function usePasswordValidator(config = { min: 6, max: 10 }) {
+function usePasswordValidator(config = { min: 6, max: 15 }) {
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
+ 
 
   useEffect(
     () => {

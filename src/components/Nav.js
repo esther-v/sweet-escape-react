@@ -1,11 +1,17 @@
-import React from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import logoBlanc from '../img/logo-blanc.png';
 import userIcon from '../img/user1.svg';
+import authContext from '../store';
 
 
 const Nav = () => {
+    const store = useContext(authContext);
+    const [connected, isConnected] = useState(store.isAuth);
+    useEffect(() => {
+        isConnected(store.isAuth);
+    }, [store.isAuth])
     return(
         <StyledNav>
             <h1><Link id="logo" to="/"><img src={logoBlanc} alt="logo-oiseau-blanc volant" className="logo-nav"/>Sweet Escape</Link></h1>
@@ -14,7 +20,7 @@ const Nav = () => {
                 <li><Link to="/bonsplans">Bons plans</Link></li>
                 <li><Link to="/covoyageurs">Co-voyageurs</Link></li>
                 <li><Link to="/login">Compte</Link></li>
-                {localStorage.token?
+                {connected?
                 <>
                 <li><Link to="/profil"><img src={userIcon} alt="icone utilisateur" className="icon"/></Link></li>
                 </>

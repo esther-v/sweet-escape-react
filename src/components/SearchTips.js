@@ -20,7 +20,6 @@ const SearchTips = () => {
             console.log(error);
         }    
     }
-
     const updateSearch = e => {
         setSearch(e.target.value);
     }
@@ -50,6 +49,8 @@ const SearchTips = () => {
             key={tip.id_tip} 
             place_name={tip.place_name}
             description={tip.description}
+            city={tip.city}
+            country={tip.country}
             
             />
             ))}

@@ -19,7 +19,7 @@ const SectionBonsPlans = () => {
             <div className="box">
                 <div className="container-text">
                     <h2>Bons plans</h2>
-                    <p>Retrouvez plein d'expériences postées uniquement par les voyageurs.</p>
+                    <p>Retrouvez toutes les expériences postées par les voyageurs.</p>
                 </div>
             </div>
             <motion.button 

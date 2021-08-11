@@ -41,9 +41,20 @@ const RecentTips =  () => {
 const StyledMostRecent = styled.div`
     background: lightblue;
     padding: 40px 60px;
+    @media (max-width: 440px) {
+    padding: 20px 10px;
+    }
+    h2{
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+    }
     .box-tips{
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
+    
 `
 
 export default RecentTips;

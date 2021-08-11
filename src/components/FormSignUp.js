@@ -64,13 +64,17 @@ const FormSignUp = (props) => {
                 value={firstname}
                 onChange={e => setFirstName(e.target.value)}
                 type="text"
+                minLength="2"
+                maxLength="15"
                 placeholder="Prénom"
+                required
             />
             <input
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                type="text"
+                type="email"
                 placeholder="Email"
+                required
             />
             <div className="error">{emailError}</div>
 
@@ -78,7 +82,11 @@ const FormSignUp = (props) => {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 type="password"
+                minLength="6"
+                maxLength="15"
                 placeholder="Password"
+                required
+
             />
             <div className="error">{passwordError}</div>
 
@@ -93,6 +101,7 @@ const FormSignUp = (props) => {
                 onChange={e => setCountry(e.target.value)}
                 type="text"
                 placeholder="Pays"
+                required
             />
             <input
                 value={description}
@@ -112,7 +121,9 @@ const StyledForm = styled.form`
     flex-direction: column;
     input{
         margin-bottom: 20px;
+        outline: none;
     }
+    
 `
 
 export default withRouter (FormSignUp);

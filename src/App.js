@@ -7,6 +7,7 @@ import BonsPlans from './pages/BonsPlans';
 import CoVoyageurs from './pages/CoVoyageurs';
 import Profil from './pages/Profil';
 import Login from './pages/Login';
+import SignUp from './pages/SignUp';
 import FormNewTip from './components/FormNewTip';
 import GlobalStyle from './components/GlobalStyle';
 //Router
@@ -16,11 +17,11 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 const PrivateRoute =({component: Component, ...rest}) => {
   const store = React.useContext(authContext);
   return (
-    <Route {...rest} render={(props) => (
+    <Route {...rest} render={props => 
       store.isAuth
       ? <Component {...props} />
       : <Redirect to='/' />
-    )} />
+    } />
   );
 }
 
@@ -41,6 +42,9 @@ const App = () => {
         </Route>
         <Route path="/login">
           <Login/>
+        </Route>
+        <Route path="/signup">
+          <SignUp/>
         </Route>
         <PrivateRoute path="/profil" render={(props) => <FormNewTip{...props}/>}>
           <Profil/>

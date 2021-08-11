@@ -22,15 +22,12 @@ const FormNewTip = () => {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        // console.log(e);
         const tip_infos = {
             place_name: place_name,
             description: description,
             city: city,
             country: country,
-            type: type
-        };
+            type: type};
         try {
             const response = await tipService.newTip(tip_infos);
             if(response.status === 201) {

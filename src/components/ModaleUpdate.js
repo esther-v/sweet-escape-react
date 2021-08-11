@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import UpdateTip from './UpdateTip';
 
 
-const ModaleInscription = ({revele, cache}) => revele ?(
+const ModaleUpdate = ({revele, cache, id_tip, place_name}) => revele ?(
 
     <StyledModale>
         <div className="overlay"></div>
@@ -13,7 +13,9 @@ const ModaleInscription = ({revele, cache}) => revele ?(
                     <span>&times;</span>
                 </button>
                 <p>Modifer le bon plan</p>
-                <UpdateTip/>
+               <UpdateTip
+               id_tip={id_tip}
+               place_name={place_name}/>
             </div>
         </div>
     </StyledModale>
@@ -49,4 +51,4 @@ const StyledModale = styled.div`
 `
 
 
-export default ModaleInscription;
+export default ModaleUpdate;

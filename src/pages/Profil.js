@@ -43,6 +43,8 @@ const Profil = () => {
     fetchData();
     }, [])
 
+    
+
     return(
         <StyledProfil>
             <LandingProfil/>
@@ -54,8 +56,8 @@ const Profil = () => {
                 <p>Description: {profile.description}</p>
                 <p>Email: {profile.email}</p>
                 <BtnDeconnect/>
+                <h4>Les expériences que j'ai postées : </h4>
                 <div className="my-tips">
-                    <h4>Les expériences que j'ai postées : </h4>
                     {myTips.map(myTip => (
                         <MyTip 
                         key={myTip.id_tip} 
@@ -79,6 +81,9 @@ const StyledProfil = styled.div`
         padding: 40px 60px;
     }
     .my-tips{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
         margin: 20px 0;
     }
 `
