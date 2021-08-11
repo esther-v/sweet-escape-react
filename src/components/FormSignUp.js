@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react';
 import userService from '../services/user';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
-import { validateEmail } from '../utils/utils';
-import usePasswordValidator from '../utils/usePasswordValidator';
+import { validateEmail } from '../utils/emailValidation';
+import usePasswordValidator from '../utils/passwordValidation';
+import FirstnameValidator from '../utils/firstnameValidation';
 
 const FormSignUp = (props) => {
 
-    const [firstname, setFirstName] = useState("");
+    const [firstname, setFirstName, firstnameError] = FirstnameValidator({min: 2, max: 15});
     const [email, setEmail] = useState("");
     const [emailError, setEmailError] = useState("");
-    const [password, setPassword, passwordError] = usePasswordValidator({min: 8, max: 15});
+    const [password, setPassword, passwordError] = usePasswordValidator({min: 6, max: 15});
     const [birthday, setBirthday] = useState("");
     const [country, setCountry] = useState("");
     const [description, setDescription] = useState("");
@@ -22,9 +23,8 @@ const FormSignUp = (props) => {
         } else {
             if (validateEmail(email)) {
                 setEmailError("");
-            
             } else {
-                setEmailError("Please enter a valid email.");
+                setEmailError("Veuillez entrer un email valide.");
             }
         }
       },
@@ -59,7 +59,7 @@ const FormSignUp = (props) => {
 
            { error === ""
                 ? null
-                : <h5> {error} <button onClick={()=> setError("")}> X </button> </h5>} 
+                : <p> {error} <button onClick={()=> setError("")}> X </button> </p>} 
             <input
                 value={firstname}
                 onChange={e => setFirstName(e.target.value)}
@@ -69,6 +69,9 @@ const FormSignUp = (props) => {
                 placeholder="Prénom"
                 required
             />
+
+            <p className="error">{firstnameError}</p>
+
             <input
                 value={email}
                 onChange={e => setEmail(e.target.value)}
@@ -76,7 +79,7 @@ const FormSignUp = (props) => {
                 placeholder="Email"
                 required
             />
-            <div className="error">{emailError}</div>
+            <p className="error">{emailError}</p>
 
             <input
                 value={password}
@@ -88,13 +91,12 @@ const FormSignUp = (props) => {
                 required
 
             />
-            <div className="error">{passwordError}</div>
+            <p className="error">{passwordError}</p>
 
             <input
                 value={birthday}
                 onChange={e => setBirthday(e.target.value)}
-                type="text"
-                placeholder="YYYY-MM-DD"
+                type="date"
             />
             <input
                 value={country}
@@ -103,11 +105,11 @@ const FormSignUp = (props) => {
                 placeholder="Pays"
                 required
             />
-            <input
+            <textarea
                 value={description}
                 onChange={e => setDescription(e.target.value)}
                 type="text"
-                placeholder="Description"
+                placeholder="Décrivez-vous en quelques mots"
             />
             <button type="submit">Envoyer</button>
         </StyledForm>
@@ -122,6 +124,10 @@ const StyledForm = styled.form`
     input{
         margin-bottom: 20px;
         outline: none;
+    }
+    .error{
+        color: red;
+        font-size: 10px;
     }
     
 `

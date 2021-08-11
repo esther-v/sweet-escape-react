@@ -11,15 +11,14 @@ function usePasswordValidator(config = { min: 6, max: 15 }) {
       if (!password) return;
 
       if (password.length < config.min) {
-        setPasswordError(`Password must be at least ${config.min} characters.`);
+        setPasswordError(`Votre mot de passe doit contenir au moins ${config.min} caractères.`);
       } else if (password.length > config.max) {
         setPasswordError(
-          `Password must be less than ${config.max} characters.`
+          `Votre mot de passe ne doit pas dépasser ${config.max} caractères.`
         );
       }
     },
-    // eslint-disable-next-line 
-    [password]
+    [password, config.min, config.max]
   );
 
   return [password, setPassword, passwordError];

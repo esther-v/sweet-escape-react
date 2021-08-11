@@ -2,10 +2,7 @@ import React, {useState, useEffect} from 'react';
 import tipService from '../services/tip_service';
 
 const UpdateTip = ({id_tip}) => {
-    // const [update, setUpdate] = useState({
-    //     place_name: "",
-    //     description:"",
-    // })
+    
     const [updatedPlace, setUpdatedPlace] = useState("");
     const [updatedDescription, setUpdatedDescription] = useState("")
  // eslint-disable-next-line
@@ -41,12 +38,10 @@ const UpdateTip = ({id_tip}) => {
         <form onSubmit={onSubmit} className="update-form">
             <input 
             type="text" 
-            placeholder={updatedPlace}
             value={updatedPlace}
             onChange={e => setUpdatedPlace(e.target.value)}
             />
             <textarea type="text" 
-            placeholder={updatedDescription}
             value={updatedDescription}
             onChange={e => setUpdatedDescription(e.target.value)}
             />
