@@ -52,7 +52,7 @@ const Profil = () => {
 
                 <h4>Informations profil</h4>
                 <p>Prénom: {profile.firstname}</p>
-                <p>Pays: {profile.country}</p>
+                <p>Pays: {profile.country_user}</p>
                 <p>Description: {profile.description}</p>
                 <p>Email: {profile.email}</p>
                 <BtnDeconnect/>

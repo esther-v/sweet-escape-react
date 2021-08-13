@@ -1,17 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import LogiqueModaleInscription from './LogiqueModaleInscription';
-import LogiqueModaleConnexion from './LogiqueModaleConnexion';
-import ModaleInscription from './ModaleInscription';
-import ModaleConnexion from './ModaleConnexion';
+import {Link} from 'react-router-dom';
 import mountainsunset from '../img/mountain-sunset.png';
 
 
 
 const NewBonPlan = () => {
 
-    const {revele, toggle} = LogiqueModaleInscription();
-    const {montre, bascule} = LogiqueModaleConnexion();
+
 
     return (
         <StyledBoxNewTip>
@@ -19,17 +15,11 @@ const NewBonPlan = () => {
                 <div className="box">
                     <h2>Poster un nouveau bon plan</h2>
                     <p>Pour partager un bon plan voyage avec notre communauté, veuillez vous créer un compte ici :</p>
-                    <button onClick={toggle}>Créer un compte en 2 minutes</button>
-                    <ModaleInscription
-                        revele={revele}
-                        cache={toggle}
-                    />
+                    <button> <Link to="/signup" className="link">Créer un compte en 2 minutes</Link></button>
+                   
                     <p>Ou vous connecter à votre compte :</p>
-                    <button onClick={bascule}>Se connecter</button>
-                    <ModaleConnexion
-                        revele={montre}
-                        cache={bascule}
-                    />
+                    <button> <Link to="/login" className="link">Se connecter</Link></button>
+                   
                 </div>
             </div>
         </StyledBoxNewTip>
@@ -69,6 +59,12 @@ const StyledBoxNewTip = styled.div`
         cursor: pointer;
         &:hover{
             background: #00909E;
+        }
+        .link{
+        text-decoration: none;
+        color:white;
+        font-weight: bold;
+        font-size: 14px;
         }
     }
 

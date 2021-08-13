@@ -15,7 +15,7 @@ const LandingAccueil = () => {
                 transition={{ duration: 1.2}}
             className="cloud" src={cloud1} alt="nuage" />
             <motion.h1
-                initial={{y: -100}}
+                initial={{y: -50}}
                 animate={{y: 0}}
                 transition={{ duration: 1}}
             >Sweet Escape.</motion.h1>

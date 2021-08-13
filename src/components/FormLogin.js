@@ -17,7 +17,7 @@ const FormLogin = (props) => {
         try {
             const response = await userService.login(email, password);
             if(response.status === 200) {
-                console.log(response);
+                // console.log(response);
                 localStorage.setItem('token', response.data.token);
                 authStore.setToken(response.token);
                 authStore.setIsAuth(true);
@@ -60,8 +60,23 @@ const StyledForm = styled.form`
     background: #f1f1f1;
     color: black;
     padding: 20px;
+    margin: 20px auto;
     input{
         margin-bottom: 20px;
+        padding: 10px;
+        border : 1px dashed #00909E;
+        border-radius: 5px;
+    }
+    button{
+        background-color: #005792;
+        color: white;
+        display: block;
+        padding: 10px 20px;
+        border-radius: 8px;
+        border:none; 
+        &:hover{
+            background: #00909E;
+        }
     }
 `
 

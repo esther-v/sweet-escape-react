@@ -59,27 +59,27 @@ const FormSignUp = (props) => {
 
            { error === ""
                 ? null
-                : <p> {error} <button onClick={()=> setError("")}> X </button> </p>} 
+                : <h5> {error} <button onClick={()=> setError("")}> X </button> </h5>} 
             <input
                 value={firstname}
                 onChange={e => setFirstName(e.target.value)}
                 type="text"
                 minLength="2"
                 maxLength="15"
-                placeholder="Prénom"
+                placeholder="Prénom*"
                 required
             />
 
-            <p className="error">{firstnameError}</p>
+            <h5 className="error">{firstnameError}</h5>
 
             <input
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 type="email"
-                placeholder="Email"
+                placeholder="Email*"
                 required
             />
-            <p className="error">{emailError}</p>
+            <h5 className="error">{emailError}</h5>
 
             <input
                 value={password}
@@ -87,31 +87,37 @@ const FormSignUp = (props) => {
                 type="password"
                 minLength="6"
                 maxLength="15"
-                placeholder="Password"
+                placeholder="Mot de passe*"
                 required
 
             />
-            <p className="error">{passwordError}</p>
+            <h5 className="error">{passwordError}</h5>
 
+            <label htmlFor="birthday">Date de naissance*</label>
             <input
                 value={birthday}
                 onChange={e => setBirthday(e.target.value)}
-                type="date"
+                type="date"  
+                id="birthday"
+                required
             />
             <input
                 value={country}
                 onChange={e => setCountry(e.target.value)}
                 type="text"
-                placeholder="Pays"
+                placeholder="Pays*"
                 required
             />
             <textarea
                 value={description}
                 onChange={e => setDescription(e.target.value)}
                 type="text"
-                placeholder="Décrivez-vous en quelques mots"
+                placeholder="Une description de vous en quelques mots"
+                cols="20"
+                rows="3"
             />
-            <button type="submit">Envoyer</button>
+            <h6>*Champs requis</h6>
+            <button type="submit">S'inscrire</button>
         </StyledForm>
     )
 }
@@ -121,13 +127,42 @@ const StyledForm = styled.form`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    input{
-        margin-bottom: 20px;
+    margin: 0 auto 20px;
+    input,textarea {
+        margin-top: 20px;
         outline: none;
+        padding: 10px;
+        border-radius: 5px;
+        border:none;
     }
-    .error{
-        color: red;
+  
+    textarea{
+        margin-bottom: 20px;
+    }
+    label{
+        color: white;
+        margin-bottom: -15px;
+        margin-top: 20px;
+        font-size: 15px;
+    }
+    h5{
         font-size: 10px;
+        color: red;
+    }
+    h6{
+        color: white;
+        margin-bottom: 10px;
+    }
+    button{
+        background-color: #005792;
+        color: white;
+        display: block;
+        padding: 10px 20px;
+        border-radius: 8px;
+        border:none; 
+        &:hover{
+            background: #00909E;
+        }
     }
     
 `

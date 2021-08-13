@@ -18,7 +18,7 @@ const Login = () => {
 }
 
 const StyledLogin = styled.div`
-    height: 88vh;
+    min-height: 88vh;
     background: linear-gradient(180deg, rgba(4,44,75,1) 0%, rgba(56,71,110,0) 80%), url(${login_bg});
     background-position: center;
     background-size: cover;
@@ -26,17 +26,24 @@ const StyledLogin = styled.div`
     align-items: center;
     justify-content:center;
     .box{
-        height: 55vh;
+        height: auto;
         width: 260px;
         background: RGBA(0,0,0,0.44);
-        margin-top: 20px;
+        margin: 90px auto 50px;
         padding: 20px 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:center;
         h2, p {
             color: #f1f1f1;
     
         }
         .connect{
             text-decoration: underline;
+            &:hover{
+            color: #00909E;
+            }
         }
     }
 `
