@@ -131,7 +131,7 @@ const StyledForm = styled.form`
     input,textarea {
         margin-top: 20px;
         outline: none;
-        padding: 10px;
+        padding: 8px;
         border-radius: 5px;
         border:none;
     }

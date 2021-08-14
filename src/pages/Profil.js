@@ -5,6 +5,8 @@ import MyTip from '../components/MyTip';
 import BtnDeconnect from '../components/BtnDeconnect';
 import styled from 'styled-components';
 import userService from '../services/user';
+import RandomQuote from '../components/RandomQuote';
+
 
 
 
@@ -49,29 +51,36 @@ const Profil = () => {
         <StyledProfil>
             <LandingProfil/>
             <div className="box-profil">
-
-                <h4>Informations profil</h4>
-                <p>Prénom: {profile.firstname}</p>
-                <p>Pays: {profile.country_user}</p>
-                <p>Description: {profile.description}</p>
-                <p>Email: {profile.email}</p>
-                <BtnDeconnect/>
-                <h4>Les expériences que j'ai postées : </h4>
-                <div className="my-tips">
-                    {myTips.map(myTip => (
-                        <MyTip 
-                        key={myTip.id_tip} 
-                        id_tip={myTip.id_tip} 
-                        place_name={myTip.place_name} 
-                        description={myTip.description} 
-                        publish={myTip.publish}
-                        type={myTip.type}/>
-                        
-                    ))}
-                   
+                <div className="infos">
+                    <div className="profil">
+                        <h3>Informations profil</h3>
+                        <p>Prénom: <span>{profile.firstname}</span></p>
+                        <p>Pays: <span>{profile.country_user}</span></p>
+                        <p>Description: <span>{profile.description}</span></p>
+                        <p>Email: <span>{profile.email}</span></p>
+                    </div>   
+                    <BtnDeconnect/>
+                </div>
+                
+                <div className="experiences">
+                    <h3>Les expériences que j'ai postées : </h3>
+                    <div className="my-tips">
+                        {myTips.map(myTip => (
+                            <MyTip 
+                            key={myTip.id_tip} 
+                            id_tip={myTip.id_tip} 
+                            place_name={myTip.place_name} 
+                            description={myTip.description} 
+                            publish={myTip.publish}
+                            type={myTip.type}/>
+                            
+                        ))}
+                    
+                    </div>
                 </div>
                 <FormNewTip/>
             </div>
+            <RandomQuote/>
         </StyledProfil>
     )
 }
@@ -79,7 +88,22 @@ const Profil = () => {
 const StyledProfil = styled.div`
     .box-profil{
         padding: 40px 60px;
+        border: 1px solid green;
+        .infos{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        p{
+            font-style: italic;
+            span{
+                font-style: normal;
+                color: #00909E;
+            }
+        }
+        }
     }
+    
     .my-tips{
         display: flex;
         justify-content: space-between;

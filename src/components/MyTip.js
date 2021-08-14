@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import tipService from '../services/tip_service';
-import LogiqueModaleInscription from './LogiqueModaleInscription';
+import LogiqueModaleUpdate from './LogiqueModaleUpdate';
 import ModaleUpdate from './ModaleUpdate';
 
 const MyTip = ({id_tip, place_name, description, publish, type}) => {
 
-    const {revele, toggle} = LogiqueModaleInscription();
+    const {revele, toggle} = LogiqueModaleUpdate();
 
     const handleSubmit = async (e) => {
         console.log(id_tip);
@@ -31,14 +31,14 @@ const MyTip = ({id_tip, place_name, description, publish, type}) => {
             <p>Posté le : {publish}</p>
             <p>Type : {type}</p>
             <div className="box-boutons">
-                <button onClick={toggle}>Modifier</button>
+                <button onClick={toggle} className="edit">Modifier</button>
                 <ModaleUpdate
                         revele={revele}
                         cache={toggle}
                         id_tip={id_tip}
                         place_name={place_name}
                     />
-                <button type="submit" onClick={handleSubmit}>Supprimer</button>
+                <button type="submit" onClick={handleSubmit}className="edit">Supprimer</button>
             </div>
         </StyledBoxTip>
     )
@@ -55,6 +55,18 @@ const StyledBoxTip = styled.div`
     .box-boutons{
         display: flex;
         justify-content: space-around;
+        .edit{
+            background: white;
+            padding: 3px 5px;
+            border: 1px solid black;
+            cursor: pointer;
+
+            &:hover{
+                transition: all 0.2s ease-in-out;
+                background: #5E5252;
+                color: white;
+            }
+        }
     }
 `
 

@@ -1,13 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import mountainsunset from '../img/mountain-sunset.png';
+// import mountainsunset from '../img/mountain-sunset.png';
 
 
 
 const NewBonPlan = () => {
-
-
 
     return (
         <StyledBoxNewTip>
@@ -32,17 +30,18 @@ const StyledBoxNewTip = styled.div`
     .container {
         /* border: 1px solid blue; */
         width: 100%;
-        background: url(${mountainsunset}),  no-repeat;
+        background: url("https://images.unsplash.com/photo-1493713838217-28e23b41b798?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"),  no-repeat;
         background-size: cover;
         background-position: center;
     }
     .box {
-        width: 60%;
+        width: 50%;
         margin: 0 auto;
         /* border: 1px solid green; */
         text-align: center;
         background: #EEEEEE;
         box-shadow: 0px 0px 50px 10px #fff;
+        padding: 30px 20px;
     }
     p{
         margin: 50px 0 20px;

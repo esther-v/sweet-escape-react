@@ -61,6 +61,7 @@ const SearchTips = () => {
 
 const StyledSearchBox = styled.div`
     padding : 40px 60px;
+    
     form{
         display: flex;
         align-items: center;

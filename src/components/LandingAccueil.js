@@ -10,19 +10,20 @@ const LandingAccueil = () => {
     return(
         <StyledLandAccueil>
             <motion.img 
-                initial={{ opacity: 0}}
-                animate={{ opacity: 1}}
-                transition={{ duration: 1.2}}
+                initial={{y: -5}}
+                animate={{y: 0}}
+                transition={{ duration: 1, yoyo:2}}
+            
             className="cloud" src={cloud1} alt="nuage" />
             <motion.h1
-                initial={{y: -50}}
-                animate={{y: 0}}
-                transition={{ duration: 1}}
-            >Sweet Escape.</motion.h1>
-            <motion.img 
                 initial={{ opacity: 0}}
                 animate={{ opacity: 1}}
-                transition={{ duration: 1.2}}
+                transition={{ delay: 0.2, duration: 1.9}}
+            >Sweet Escape.</motion.h1>
+            <motion.img 
+                initial={{y: -5}}
+                animate={{y: 0}}
+                transition={{ delay: 0.3, duration: 1, yoyo:2}}
             className="cloud" src={cloud2} alt="nuage" />
             {/* <Wave/> */}
         </StyledLandAccueil>

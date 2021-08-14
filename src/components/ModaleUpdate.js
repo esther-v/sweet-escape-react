@@ -6,44 +6,49 @@ import UpdateTip from './UpdateTip';
 const ModaleUpdate = ({revele, cache, id_tip, place_name}) => revele ?(
 
     <StyledModale>
-        <div className="overlay"></div>
+   
         <div className="wrapper">
             <div className="modale">
                 <button className="close" type="button" onClick={cache}>
                     <span>&times;</span>
                 </button>
-                <p>Modifer le bon plan</p>
+                {/* <p>Modifer le bon plan</p> */}
                <UpdateTip
                id_tip={id_tip}
                place_name={place_name}/>
             </div>
         </div>
+        
     </StyledModale>
 ) : null;
 
 const StyledModale = styled.div`
-   
-    .overlay {
-        background: rgba(0, 0, 0, 0.5);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
+   border: 1px solid red;
+   height: 100%;
+   position: relative;
+   background: rgba(0, 0, 0, 0.5);
     .wrapper {
-        height: 500px;
-        width: 700px;
-        background: rgb(214,105,127);
+        height: 280px;
+        width: 260px;
+        background: #5E5252;
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: -50%;
+        left: -50%;
+        transform: translate(-47.5%, -65%);
+        border-radius: 5px;
     }
     .close {
         position: absolute;
         right: 15px;
         top: 15px;
+        padding: 2px 4px;
+        background: #00909E;
+        color: white;
+        border: none;
+        &:hover{
+            background: white;
+            color: black;
+        }
     }
     .modale {
         padding: 40px 20px 20px;
