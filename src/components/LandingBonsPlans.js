@@ -21,8 +21,8 @@ const StyledLandBonsPlans = styled.div`
     
     h2{
         color: white;
-        font-size: 4vw;
-        font-weight: 500;
+        font-size: 45px;
+        font-weight: lighter;
         text-shadow: 3px 4px 0 rgba(0,0,0,0.4);
     }
 `

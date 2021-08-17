@@ -20,7 +20,7 @@ const LandingCovoyageurs = () => {
 const StyledLandCovoyage = styled.div`
     height: 100vh;
     .box-accueil{
-        height: 60vh;
+        height: 70vh;
         display: flex;
         align-items: flex-start;
         justify-content: center;

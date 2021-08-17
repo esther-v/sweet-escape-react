@@ -11,7 +11,7 @@ import SignUp from './pages/SignUp';
 import FormNewTip from './components/FormNewTip';
 import GlobalStyle from './components/GlobalStyle';
 //Router
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
 
 
 const PrivateRoute =({component: Component, ...rest}) => {
@@ -26,11 +26,12 @@ const PrivateRoute =({component: Component, ...rest}) => {
 }
 
 const App = () => {
+  const location = useLocation();
   return (
-    <BrowserRouter>
+    <div className="App">
       <GlobalStyle/>
       <Nav/>
-      <Switch>
+      <Switch location={location} key={location.pathname}>
         <Route path="/" exact>
           <Accueil/>
         </Route>
@@ -51,7 +52,7 @@ const App = () => {
         </PrivateRoute>
       </Switch>
       <Footer/>   
-    </BrowserRouter>
+    </div>
   );
 }
 

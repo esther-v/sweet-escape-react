@@ -40,12 +40,30 @@ const StyledLandAccueil = styled.div`
     background-size: cover;
     h1{
         color: white;
-        font-size: 5vw;
+        font-size: 55px;
         text-shadow: 3px 4px 0 rgba(0,0,0,0.4);
         font-family: 'Parisienne', cursive;
     }
     .cloud {
         width: 30%;
+  }
+  @media (max-width: 720px) {
+      h1{
+          font-size: 45px;
+      }
+      .cloud{
+          width: 25%;
+      }
+  }
+  @media (max-width: 470px) {
+      h1{
+          font-size: 36px;
+      }
+  }
+  @media (max-width: 376px) {
+      h1 {
+          font-size: 30px;
+      }
   }
 `
 

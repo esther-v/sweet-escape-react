@@ -13,7 +13,7 @@ const FormSignUp = (props) => {
     const [emailError, setEmailError] = useState("");
     const [password, setPassword, passwordError] = usePasswordValidator({min: 6, max: 15});
     const [birthday, setBirthday] = useState("");
-    const [country, setCountry] = useState("");
+    const [country_user, setCountry] = useState("");
     const [description, setDescription] = useState("");
     const [error, setError] = useState("");
 
@@ -39,14 +39,14 @@ const FormSignUp = (props) => {
             email: email,
             password: password,
             birthday: birthday,
-            country: country,
+            country_user: country_user,
             description: description
             };
             try {
                 const response = await userService.signup(user);
                 if(response.status === 201) {
-                    console.log(response);
-                    props.history.push('/bonsplans')
+                    // console.log(response);
+                    props.history.push('/login')
                 }
             } catch(error) {
                 console.log(error.response.data.message);
@@ -102,7 +102,7 @@ const FormSignUp = (props) => {
                 required
             />
             <input
-                value={country}
+                value={country_user}
                 onChange={e => setCountry(e.target.value)}
                 type="text"
                 placeholder="Pays*"

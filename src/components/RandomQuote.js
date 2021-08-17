@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import traveler from '../img/traveler.png';
 
 
 const RandomQuote = () => {
@@ -116,17 +117,16 @@ const RandomQuote = () => {
 
 const StyledQuoteGenerator = styled.div`
     height: 200px;
-    border: 1px solid red;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url("https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1334&q=80");
+    background: url(${traveler});
     background-position: center;
     background-size: cover;
     .quote{
-        border: 1px solid blue;
         background: rgba(255,255,255, 0.7);
         max-width: 50%;
+        padding: 10px;
     }
     p{
         font-size: 18px;
