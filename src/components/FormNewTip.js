@@ -41,7 +41,7 @@ const FormNewTip = () => {
 
     return(
         <StyledFormTip>
-            <p>Créer un nouveau bon plan :</p>
+            <h3>Créer un nouveau bon plan :</h3>
             <form onSubmit={handleSubmit}>
                     
             { error === ""
@@ -85,11 +85,18 @@ const FormNewTip = () => {
 
 const StyledFormTip = styled.div`
     margin: 30px auto;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    background-color: rgba(0,144,158, 0.1);
     form{
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        margin-top: 40px;
         input, textarea {
             margin-bottom: 20px;
         }
@@ -100,6 +107,9 @@ const StyledFormTip = styled.div`
                 margin-bottom: 10px;
             }
         }
+    }
+    @media (max-width: 420px){
+        margin: 30px 0;
     }
 `
 

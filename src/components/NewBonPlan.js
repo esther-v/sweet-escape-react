@@ -9,39 +9,42 @@ const NewBonPlan = () => {
 
     return (
         <StyledBoxNewTip>
-            <div className="container">
+           
                 <div className="box">
                     <h2>Poster un nouveau bon plan</h2>
-                    <p>Pour partager un bon plan voyage avec notre communauté, veuillez vous créer un compte ici :</p>
+                    <p>Pour partager un bon plan voyage avec notre communauté, veuillez vous créer un compte ici:</p>
                     <button> <Link to="/signup" className="link">Créer un compte en 2 minutes</Link></button>
                    
-                    <p>Ou vous connecter à votre compte :</p>
+                    <p>Ou vous connecter à votre compte:</p>
                     <button> <Link to="/login" className="link">Se connecter</Link></button>
                    
                 </div>
-            </div>
+           
         </StyledBoxNewTip>
     )
 }
 
 const StyledBoxNewTip = styled.div`
-    /* border: 1px solid red; */
-    padding : 50px 0;
-    .container {
-        /* border: 1px solid blue; */
-        width: 100%;
-        background: url("https://images.unsplash.com/photo-1493713838217-28e23b41b798?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"),  no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
+    border: 1px solid red;
+    margin: 50px 0;
+    border: 1px solid blue;
+    width: 100%;
+    background: url("https://images.unsplash.com/photo-1493713838217-28e23b41b798?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"),  no-repeat;
+    background-size: cover;
+    background-position: center;
+    
     .box {
         width: 50%;
         margin: 0 auto;
-        /* border: 1px solid green; */
+        border: 1px solid green;
         text-align: center;
         background: #EEEEEE;
         box-shadow: 0px 0px 50px 10px #fff;
         padding: 30px 20px;
+        h2{
+            font-size: 36px;
+            font-weight: 600;
+        }
     }
     p{
         margin: 50px 0 20px;
@@ -64,6 +67,28 @@ const StyledBoxNewTip = styled.div`
         color:white;
         font-weight: bold;
         font-size: 14px;
+        }
+    }
+    @media (max-width: 560px){
+        .box{
+            width: 60%;
+            margin: 20px auto;
+        }
+        p{
+            font-size: 16px;
+        }
+    }
+    @media (max-width: 480px){
+        .box{
+            width: 70%;
+            height: 50%;
+            padding: 10px 5px;
+            box-shadow: none;
+        }
+    }
+    @media (max-width: 380px) {
+        .box{
+            width: 85%;
         }
     }
 

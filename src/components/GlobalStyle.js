@@ -16,6 +16,7 @@ html {
 body{
     background: white;
     font-family: 'Lato', sans-serif;
+   
 }
 
 h2{

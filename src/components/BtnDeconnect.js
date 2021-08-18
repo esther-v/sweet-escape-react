@@ -29,6 +29,10 @@ const StyledButton = styled.button`
         border: 1px solid #00909E;
         background: white;
         color: #00909E;
+    }
+    @media (max-width: 500px){
+        display: block;
+        margin: 0 auto;
     }  
 `
 

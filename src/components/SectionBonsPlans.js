@@ -44,12 +44,12 @@ const StyledSectionTips = styled.div`
     padding: 80px 0;
     .box{
         background: white;
-        /* border: 1px solid blue; */
+        border: 1px solid blue;
         width: 500px;
         
     }
     .container-text{
-        /* border: 1px solid red; */
+        border: 1px solid red;
         width: 500px;
         margin: 0 auto;
         display: flex;
@@ -89,6 +89,32 @@ const StyledSectionTips = styled.div`
         font-weight: bold;
         font-size: 14px;
     }
+    @media (max-width: 620px) {
+       .box, .container-text{
+           width: 350px;
+       }
+       .container-text h2{
+           font-size: 40px;
+       }
+       .container-text p{
+            font-size: 28px;
+       }
+   }
+   @media (max-width: 460px) {
+        .box, .container-text{
+           width: 280px;
+        }
+        .container-text{
+            padding: 20px;
+            h2 {
+                margin-bottom: 10px;
+            }
+            p{
+            font-size: 23px;
+            }
+        }
+        
+   }
     
 `
 

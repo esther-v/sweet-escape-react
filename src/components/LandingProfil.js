@@ -24,9 +24,12 @@ const StyledLandProfil = styled.div`
     
     h2{
         color: white;
-        font-size: 4vw;
-        text-shadow: 3px 4px 0 rgba(0,0,0,0.4);
         margin-top: 100px;
+        font-size: 50px;
+    
+        text-shadow: 4px 2px 2px rgba(0, 0, 0, 1);
+        text-align: center;
+       
     }
 `
 

@@ -18,9 +18,9 @@ const LandingCovoyageurs = () => {
 }
 
 const StyledLandCovoyage = styled.div`
-    height: 100vh;
+    
     .box-accueil{
-        height: 70vh;
+        height: 80vh;
         display: flex;
         align-items: flex-start;
         justify-content: center;
@@ -29,9 +29,10 @@ const StyledLandCovoyage = styled.div`
     }
     h2{
         color: white;
-        font-size: 4vw;
-        text-shadow: 3px 4px 0 rgba(0,0,0,0.4);
         margin-top: 100px;
+        font-size: 50px;
+        font-weight: lighter;
+        text-shadow: 4px 2px 2px rgba(0, 0, 0, 1);
     }
     .message-info{
         background-color: #E1E5EA;
@@ -43,6 +44,11 @@ const StyledLandCovoyage = styled.div`
             font-weight: bold;
             font-style: italic;
             margin-top: 30px;
+        }
+    }
+    @media (max-width: 600px){
+        .message-info p{
+            font-size: 20px;
         }
     }
 `

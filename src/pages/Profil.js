@@ -7,9 +7,6 @@ import styled from 'styled-components';
 import userService from '../services/user';
 import RandomQuote from '../components/RandomQuote';
 
-
-
-
 const Profil = () => {
     
     const [myTips, setMyTips] = useState([]);
@@ -90,25 +87,44 @@ const StyledProfil = styled.div`
         padding: 40px 60px;
         border: 1px solid green;
         .infos{
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        margin-bottom: 30px;
-        p{
-            font-style: italic;
-            span{
-                font-style: normal;
-                color: #00909E;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            border:1px solid blue;
+            p{
+                font-style: italic;
+                span{
+                    font-style: normal;
+                    color: #00909E;
+                }
             }
         }
+        .experiences{
+            h3{
+                text-align: center;
+            }
         }
-    }
-    
+    }  
     .my-tips{
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         margin: 20px 0;
+    }
+    @media (max-width: 500px){
+        .box-profil{
+            padding: 40px 20px;
+        }
+        .infos {
+           flex-direction: column-reverse;
+           justify-content: center;
+           align-items: center;
+           .profil{
+            border: 1px solid red;
+            margin: 20px auto;
+        }
+        }  
     }
 `
 

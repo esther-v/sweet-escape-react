@@ -24,7 +24,7 @@ const Nav = () => {
     return(
         
         <StyledNav open={open}>
-            <h1><Link id="logo" to="/"><img src={logoBlanc} alt="logo-oiseau-blanc volant" className="logo-nav"/>Sweet Escape</Link></h1>
+           <Link id="logo" to="/"><img src={logoBlanc} alt="logo-oiseau-blanc volant" className="logo-nav"/><h1>Sweet Escape</h1> </Link>
             <ul open={open}>
                 <li onClick={closeBurger}>
                     <Link to="/">Accueil</Link>
@@ -85,10 +85,7 @@ const StyledNav = styled.nav`
     background: transparent;
     position: absolute;
     width: 100%;
-    .logo-nav{
-        height: 35px;
 
-    }
     a{
         color: white;
         text-decoration: none; 
@@ -102,11 +99,22 @@ const StyledNav = styled.nav`
             position: relative;  
         }
     }
+    
     #logo{
-        font-size: 1.3rem;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        /* border: 1px solid red; */
+    }
+    .logo-nav{
+        height: 35px;
+        margin-bottom: 6px;
+    }
+    #logo h1{
+        font-size: 22px;
         font-family: 'Parisienne', cursive;
         font-weight: lighter;
-        
+        margin: 0 0 3px 3px;
     }  
     .icon{
         filter: invert(100%) sepia(3%) saturate(731%) hue-rotate(161deg) brightness(115%) contrast(100%);        
