@@ -120,7 +120,7 @@ const StyledQuoteGenerator = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url(${traveler});
+    background: url("${traveler}");
     background-position: center;
     background-size: cover;
     .quote{

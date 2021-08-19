@@ -57,6 +57,7 @@ const SearchTips = () => {
                 date={tip.date}
                 firstname={tip.firstname}
                 type={tip.type}
+                country_user={tip.country_user}
                 
                 />
                 ))}
@@ -69,9 +70,7 @@ const SearchTips = () => {
 const StyledSearchBox = styled.div`
     padding : 0 60px 20px ;
     margin: 50px 0;
-    border: 1px solid blue;
     .container{
-        border: 2px solid black;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -81,13 +80,11 @@ const StyledSearchBox = styled.div`
         font-weight: 600;
         margin-bottom: 10px;
         font-size: 37px;
-        border: 1px solid violet;
     }
     form{
         display: flex;
         align-items: center;
         gap: 20px;
-        border: 1px solid grey;
     }
     .search-bar{
         width: 100%;
@@ -115,12 +112,10 @@ const StyledSearchBox = styled.div`
         width: 100%;
     }
     .tips-results{
-        border: 1px solid red;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         margin: 20px 0;
-        background: #EEEEEE;
     }
     @media (max-width: 595px) {
         h2{

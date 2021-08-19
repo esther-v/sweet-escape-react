@@ -48,19 +48,15 @@ const RecentTips =  () => {
 }
 
 const StyledMostRecent = styled.div`
-    /* background: #EEEEEE; */
     padding: 40px 60px;
-    border: 2px solid green;
     margin: 50px 0;
-    @media (max-width: 440px) {
-    padding: 20px 10px;
-    }
     .container{
         width: 100%;
         border: 1px dashed black;
         position: relative;
+        padding: 0 10px 40px;
     }
-    .fas{
+    .fas1, .fas2{
        position: absolute;
        color: #00909E;
        font-size: 28px;
@@ -101,6 +97,14 @@ const StyledMostRecent = styled.div`
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+    }
+    @media (max-width: 440px) {
+        padding: 20px 10px;
+    }
+    @media (max-width: 380px){
+        .container{
+            padding: 0 0 40px 0;
+    }
     }
     
 `

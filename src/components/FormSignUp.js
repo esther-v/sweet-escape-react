@@ -115,6 +115,7 @@ const FormSignUp = (props) => {
                 placeholder="Une description de vous en quelques mots"
                 cols="20"
                 rows="3"
+                maxLength="200"
             />
             <h6>*Champs requis</h6>
             <button type="submit">S'inscrire</button>

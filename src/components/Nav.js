@@ -78,7 +78,7 @@ const Nav = () => {
 const StyledNav = styled.nav`
     min-height: 8vh;
     display: flex;
-    margin: auto;
+    margin: 10px auto 0;
     justify-content: space-between;
     align-items: center;
     padding: 10px 25px;
@@ -114,7 +114,7 @@ const StyledNav = styled.nav`
         font-size: 22px;
         font-family: 'Parisienne', cursive;
         font-weight: lighter;
-        margin: 0 0 3px 3px;
+        margin: 0 0 4px 3px;
     }  
     .icon{
         filter: invert(100%) sepia(3%) saturate(731%) hue-rotate(161deg) brightness(115%) contrast(100%);        

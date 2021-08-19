@@ -34,7 +34,6 @@ const SectionBonsPlans = () => {
 
 const StyledSectionTips = styled.div`
     margin: 20px 0 0;
-    /* border: 1px solid green; */
     display: flex;
     flex-direction: column;
     align-items:center;
@@ -44,12 +43,9 @@ const StyledSectionTips = styled.div`
     padding: 80px 0;
     .box{
         background: white;
-        border: 1px solid blue;
-        width: 500px;
-        
+        width: 500px;    
     }
     .container-text{
-        border: 1px solid red;
         width: 500px;
         margin: 0 auto;
         display: flex;

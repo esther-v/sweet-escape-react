@@ -4,7 +4,7 @@ import tipService from '../services/tip_service';
 import LogiqueModaleUpdate from './LogiqueModaleUpdate';
 import ModaleUpdate from './ModaleUpdate';
 
-const MyTip = ({id_tip, place_name, description, publish, type}) => {
+const MyTip = ({id_tip, place_name, description, date, type}) => {
 
     const {revele, toggle} = LogiqueModaleUpdate();
 
@@ -28,7 +28,7 @@ const MyTip = ({id_tip, place_name, description, publish, type}) => {
         <StyledBoxTip>
             <h4>{place_name}</h4>
             <p>{description}</p>
-            <p>Posté le : {publish}</p>
+            <p>Posté le : {date}</p>
             <p>Type : {type}</p>
             <div className="box-boutons">
                 <button onClick={toggle} className="edit">Modifier</button>

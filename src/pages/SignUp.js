@@ -34,7 +34,7 @@ const StyledSignUp = styled.div`
         justify-content:center;
         background: RGBA(0,0,0,0.55);
         padding: 20px 25px;
-        margin: 90px auto 50px;
+        margin: 120px auto 50px;
         h2, p {
             color: #f1f1f1;
         }

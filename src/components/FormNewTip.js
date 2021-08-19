@@ -52,32 +52,47 @@ const FormNewTip = () => {
                     value={place_name} 
                     type="text" 
                     placeholder="Nom du lieu"
-                    onChange={e => setPlaceName(e.target.value)}/>
+                    onChange={e => setPlaceName(e.target.value)}
+                    required
+                    minLength="2"
+                    maxLength="50"
+                    />
                 <textarea 
                     value={description} 
                     name="" id="" cols="30" rows="10" 
                     placeholder="Petite description du bon plan voyage"
-                    onChange={e => setDescription(e.target.value)}></textarea>
+                    onChange={e => setDescription(e.target.value)}
+                    required
+                    minLength="2"
+                    maxLength="300"></textarea>
                 <input 
                     value={city} 
                     type="text" 
                     placeholder="Ville"
-                    onChange={e => setCity(e.target.value)}/>
+                    onChange={e => setCity(e.target.value)}
+                    required
+                    minLength="2"
+                    maxLength="50"
+                    />
                 <input 
                     value={country} 
                     type="text" 
                     placeholder="Pays"
-                    onChange={e => setCountry(e.target.value)}/>   
+                    onChange={e => setCountry(e.target.value)}
+                    required
+                    minLength="2"
+                    maxLength="50"
+                    />   
                 
                 <div className="radiobuttons">
                     <label className="labelradio">Type de bon plan :</label>
                     <RadioInput label="Activités culturelles" value="culture" checked={type} setter={setType}  />
-                    <RadioInput label="Activités extérieures" value="exterieur" checked={type} setter={setType} />
+                    <RadioInput label="Activités extérieures" value="extérieur" checked={type} setter={setType} />
                     <RadioInput label="Restaurants/bars/cafés" value="restaurant" checked={type} setter={setType} />
-                    <RadioInput label="Hébergements" value="hebergement" checked={type} setter={setType} />
+                    <RadioInput label="Hébergements" value="hébergement" checked={type} setter={setType} />
                 </div>
-
-                <button type="submit">Envoyer</button>
+                <p>Tous les champs sont requis</p>
+                <button type="submit">Créer</button>
             </form>
         </StyledFormTip>
     )
@@ -96,9 +111,12 @@ const StyledFormTip = styled.div`
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        margin-top: 40px;
+        margin-top: 20px;
         input, textarea {
             margin-bottom: 20px;
+            padding: 8px;
+            border-radius: 5px;
+            border : 1px dashed #00909E;
         }
         .radiobuttons {
             display: flex;
@@ -107,6 +125,23 @@ const StyledFormTip = styled.div`
                 margin-bottom: 10px;
             }
         }
+        button{
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+        color: white;
+        cursor: pointer;
+        &:hover{
+            background: #00909E;
+        }
+        }
+    }
+    p{
+        font-size: 15px;
+        color: #00909E;
+        margin-bottom: 10px;
     }
     @media (max-width: 420px){
         margin: 30px 0;

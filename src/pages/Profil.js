@@ -62,13 +62,13 @@ const Profil = () => {
                 <div className="experiences">
                     <h3>Les expériences que j'ai postées : </h3>
                     <div className="my-tips">
-                        {myTips.map(myTip => (
+                        {myTips && myTips.map(myTip => (
                             <MyTip 
                             key={myTip.id_tip} 
                             id_tip={myTip.id_tip} 
                             place_name={myTip.place_name} 
                             description={myTip.description} 
-                            publish={myTip.publish}
+                            date={myTip.date}
                             type={myTip.type}/>
                             
                         ))}
@@ -85,13 +85,11 @@ const Profil = () => {
 const StyledProfil = styled.div`
     .box-profil{
         padding: 40px 60px;
-        border: 1px solid green;
         .infos{
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
             margin-bottom: 40px;
-            border:1px solid blue;
             p{
                 font-style: italic;
                 span{
@@ -121,7 +119,6 @@ const StyledProfil = styled.div`
            justify-content: center;
            align-items: center;
            .profil{
-            border: 1px solid red;
             margin: 20px auto;
         }
         }  
