@@ -8,7 +8,7 @@ const BtnDeconnect = (props) => {
     function logOut(){
         localStorage.clear();
         store.setIsAuth(false);
-        props.history.push('/login');
+        props.history.push('/');
     }
     return(
         <StyledButton onClick={logOut}>

@@ -8,17 +8,13 @@ const MyTip = ({id_tip, place_name, description, date, type}) => {
 
     const {revele, toggle} = LogiqueModaleUpdate();
 
-    const handleSubmit = async (e) => {
-        console.log(id_tip);
-        console.log(e);
-
+    const handleDelete = async (e) => {
         try {
             const response = await tipService.deleteTip(id_tip);
             if(response.status === 200) {
                 console.log(id_tip)
                 console.log(response);  
-            } 
-            
+            }      
         } catch(error) {
             console.log(error);
         }
@@ -38,7 +34,7 @@ const MyTip = ({id_tip, place_name, description, date, type}) => {
                         id_tip={id_tip}
                         place_name={place_name}
                     />
-                <button type="submit" onClick={handleSubmit}className="edit">Supprimer</button>
+                <button type="submit" onClick={handleDelete}className="edit">Supprimer</button>
             </div>
         </StyledBoxTip>
     )

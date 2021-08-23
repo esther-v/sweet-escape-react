@@ -31,7 +31,6 @@ const FormLogin = (props) => {
 
     return(
         <StyledForm onSubmit={handleSubmit}>
-
             { error === ""
                 ? null
                 : <h5> {error} <button onClick={()=> setError("")}> X </button> </h5>} 

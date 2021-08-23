@@ -45,7 +45,6 @@ const FormSignUp = (props) => {
             try {
                 const response = await userService.signup(user);
                 if(response.status === 201) {
-                    // console.log(response);
                     props.history.push('/login')
                 }
             } catch(error) {

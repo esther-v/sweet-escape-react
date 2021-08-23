@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import tipService from '../services/tip_service';
 import styled from 'styled-components';
+import PlaceNameValidator from '../utils/placenameValidator';
+import DescriptionValidator from '../utils/descriptionValidator';
 
 const FormNewTip = () => {
 
-    const [place_name, setPlaceName] = useState("");
-    const [description, setDescription] = useState("");
+    const [place_name, setPlaceName, place_nameError] = PlaceNameValidator({min: 2, max: 50});
+    const [description, setDescription, descriptionError] = DescriptionValidator({min: 2, max: 200});
     const [city, setCity] = useState("");
     const [country, setCountry] = useState("");
     const [type, setType] = useState("");
@@ -56,7 +58,10 @@ const FormNewTip = () => {
                     required
                     minLength="2"
                     maxLength="50"
-                    />
+                />
+
+                <h5 className="error">{place_nameError}</h5>
+
                 <textarea 
                     value={description} 
                     name="" id="" cols="30" rows="10" 
@@ -65,6 +70,9 @@ const FormNewTip = () => {
                     required
                     minLength="2"
                     maxLength="300"></textarea>
+                
+                <h5 className="error">{descriptionError}</h5>
+
                 <input 
                     value={city} 
                     type="text" 
@@ -137,6 +145,11 @@ const StyledFormTip = styled.div`
             background: #00909E;
         }
         }
+        h5{
+        font-size: 10px;
+        color: red;
+        margin-bottom: 10px;
+    }
     }
     p{
         font-size: 15px;
